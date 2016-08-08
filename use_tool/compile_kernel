@@ -1,0 +1,4 @@
+make distclean
+cp config_33cw5 .config
+make menuconfig
+make CROSS_COMPILE=arm-s3c2440-linux-gnueabi-

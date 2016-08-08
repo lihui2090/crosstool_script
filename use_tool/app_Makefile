@@ -1,0 +1,20 @@
+CROSS_COMPILE   = arm-s3c2440-linux-gnueabi-
+AS              = $(CROSS_COMPILE)as
+LD              = $(CROSS_COMPILE)ld
+CC              = $(CROSS_COMPILE)gcc
+CPP             = $(CC) -E
+AR              = $(CROSS_COMPILE)ar
+NM              = $(CROSS_COMPILE)nm
+STRIP           = $(CROSS_COMPILE)strip
+OBJCOPY         = $(CROSS_COMPILE)objcopy
+OBJDUMP         = $(CROSS_COMPILE)objdump
+
+
+
+adc-test: adc-test.c
+	$(CC) adc-test.c -Wall -O2 -o adc-test        
+	$(STRIP) -s adc-test       
+
+clean:
+	rm adc-test
+
