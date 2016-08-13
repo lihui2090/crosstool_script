@@ -1,0 +1,11 @@
+cd /opt/s3c2440_work/bootloader/bootloader/u-boot-1.1.6
+
+find -type f  |  grep "arm-linux"  `xargs`
+export CROSS_COMPILE=arm-s3c2440-linux-gnueabi-
+#replace cross_compile name 
+#/home/ll/x-tools/arm-s3c2440-linux-gnueabi/arm-s3c2440-linux-gnueabi/sysroot/usr/lib
+make clean
+make distclean
+make open24x0_config
+make
+**
