@@ -1,0 +1,7 @@
+#!/bin/bash
+#project name is 3gcamera.pro
+source /home/embedclub/arm-qtopia/qtopia-2.2.0-FriendlyARM/setQpeEnv
+export PATH=$PATH:/home/embedclub/arm-qtopia/qtopia-2.2.0-FriendlyARM/tmake/bin
+tmake -o Makefile 3gcamera.pro
+make
+
