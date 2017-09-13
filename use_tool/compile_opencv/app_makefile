@@ -1,0 +1,16 @@
+TARGET = test  
+SRC = test.cpp  
+  
+  
+#LIBOPENCV = /home/ll/x-tools/arm-s3c2440-linux-gnueabi
+LIBOPENCV = /opt/opencv/tmp/opencv-2.4.10/install
+CFLAGS = -I$(LIBOPENCV)/include/opencv/ -I$(LIBOPENCV)/include/
+LDFLAGS = -L$(LIBOPENCV)/lib -L/home/ll/x-tools/arm-s3c2440-linux-gnueabi/arm-s3c2440-linux-gnueabi/sysroot/lib/  -lopencv_core  -lopencv_imgproc   
+  
+  
+$(TARGET): $(SRC)  
+	arm-s3c2440-linux-gnueabi-g++ --sysroot=/home/ll/x-tools/arm-s3c2440-linux-gnueabi/arm-s3c2440-linux-gnueabi/sysroot  $(CFLAGS) $(SRC) -o $(TARGET) $(LDFLAGS)  
+  
+  
+clean:  
+	rm -rf $(TARGET) 
